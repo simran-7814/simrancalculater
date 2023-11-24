@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculater</title>
+    
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap');
+#moniter:hover{
+    border-color:  blueviolet;
+  
+}
+.container{
+    margin-left: 600px;
+    margin-top: 200px;
+
+    width: 100%;
+   
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+button{
+    padding: 20px;
+    margin: 0 8px;
+    border-color: 2px black;
+    border-radius: 20%;
+}
+#moniter{
+    margin: 7px 15px;
+   padding-left: 65px;
+   padding-right: 10px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+    
+}
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: red;
+    }
+    .container{
+        margin-left: 100px;
+        margin-top: 100px;
+    }
+    .b{
+        
+      
+    }
+
+  }
+  #a{
+    margin-left: 80px;
+    
+   
+  }
+  .b{
+   margin-left: 50px;
+  }
+ 
+ 
+    </style>
+</head>
+
+
+<body >
+    
+    <div class="container">
+      <div>
+      <h1 class="b">calculater</h1></div>
+        <div class="row">
+    <input type="text"  id="moniter"><br><br></div>
+    <div class="row1">
+    <button class="button">C</button>
+    <button class="button">(</button>
+    <button class="button">)</button>
+    <button class="button">/</button><br><br>
+  </div>
+    
+    <div class="row">
+    <button class="button">7</button>
+    <button class="button">8</button>
+    <button class="button">9</button>
+    <button class="button">*</button><br><br>
+    
+    
+
+    <div class="row">
+
+    <button class="button">4</button>
+    <button  class="button">5</button>
+    <button  class="button">6</button>
+    <button  class="button">/</button><br><br></div>
+    <div class="row">
+    <button class="button">1</button>
+    <button  class="button">2</button>
+    <button class="button">3</button>
+    <button  class="button">-</button><br><br></div>
+    <div class="row">
+    <button class="button">0</button>
+    <button class="button"  >.</button>
+    <button class="button">=</button>
+    <button class="button">+</button><br><br></div>
+    
+    
+    </div>
+    
+    
+
+    
+</body>
+<script>
+    let string = "";
+let buttons = document.querySelectorAll('.button');
+Array.from(buttons).forEach((button)=>{
+  button.addEventListener('click', (e)=>{
+    if(e.target.innerHTML == '='){
+      string = eval(string);
+      document.querySelector('input').value = string;
+    }
+    else if(e.target.innerHTML == 'C'){
+      string = ""
+      document.querySelector('input').value = string;
+    }
+    else{ 
+    console.log(e.target)
+    string = string + e.target.innerHTML;
+    document.querySelector('input').value = string;
+      }
+  })
+})
+function reset(){
+    document.getElementById("moniter").value="";
+}
+</script>
+
+
+
+
+
+
+
+
+
+</html>
